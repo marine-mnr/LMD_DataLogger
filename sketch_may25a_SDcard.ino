@@ -13,13 +13,13 @@ const int chipSelectPin = 4; // Broche CS du shield
 
 void setup() {
   // Initialisation de la communication SPI
-  SPI.begin();
+  //SPI.begin();
   Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
-
-  Serial.print("Initialisation de la carte SD...");
+  Serial.print("\n");
+  Serial.println("Initialisation de la carte SD...");
 
   // Vérification de la présence de la carte SD
   if (!SD.begin(chipSelectPin)) {
@@ -27,62 +27,66 @@ void setup() {
     while (1);
   }
     Serial.println("Carte SD initialisée avec succès.");
+
+    Serial.println("------------------------------");
 }
 
 void loop() {
-  k=k+1;
-  // make a string for assembling the data to log:
-  String dataString = "test" + String(k);
-
-  // // Assemblage des donnees a logger:
-  // String dataString = "";
   
-  // // si on recoit quelque chose de LEONARDO:
-  // for (int i=0; i<27; i++){
-  //   if(Serial.available()>0){
-  //     value=Serial.read();
+  // // make a string for assembling the data to log:
+  // k=k+1;
+  // String dataString = "test" + String(k);
 
-  //     //-----------------------------------------------------------------
-  //     //Serial.print("data recues : "); // Affichage dans le Serial Monitor
-  //     Serial.print(value);            
-  //     //-----------------------------------------------------------------
-
-  //     dataString += String(value); //Ajout à la string de données a enregistrer
-  //   }
-  // }
-
+  // Assemblage des donnees a logger:
+  String dataString = "";
   
+  // si on recoit quelque chose de LEONARDO:
+  //for (int i=0; i<27; i++){
+    if(Serial.available()>0){
+      value=Serial.read();
 
-  // Ouverture du fichier sur la carte SD en mode écriture
-  // Rq: 1 seul fichier peut être ouvert à la fois, il faudra fermer celui-là si on veut en ouvrir un autre.
-  File dataFile = SD.open("data111111.txt", FILE_WRITE);
-  //ATTENTION : la taille du nom de fichier ne peut pas exceder 8 caractères
-  
-  //Debuggage
-  // if (SD.exists("data_test.txt")) {
-  //   Serial.println("data_test exists. ");
-  // }
+      //-----------------------------------------------------------------
+      //Serial.print("data recues : "); // Affichage dans le Serial Monitor
+      //Serial.print(value);            
+      //-----------------------------------------------------------------
 
-  // Vérification si le fichier a pu être ouvert
-  if (dataFile) {
-    // Écriture des données dans le fichier
-    dataFile.println(dataString);
-
-    //-----------------------------------------------------------------
-    Serial.print("data ecrite : "); // Affichage dans le Serial Monitor
-    Serial.println(dataString);
-    //-----------------------------------------------------------------
-
-    // Fermeture du fichier
-    dataFile.close();
+      dataString += String(value); //Ajout à la string de données a enregistrer
     
-    //Serial.println("Donnees ecrites avec succes !");
-  } 
-  else {
-    Serial.println("Erreur lors de l'ouverture du fichier.");
-    while(1);
+  //}
+
+  
+
+      // Ouverture du fichier sur la carte SD en mode écriture
+      // Rq: 1 seul fichier peut être ouvert à la fois, il faudra fermer celui-là si on veut en ouvrir un autre.
+      File dataFile = SD.open("data001.txt", FILE_WRITE);
+      //ATTENTION : la taille du nom de fichier ne peut pas exceder 8 caractères
+      
+      //Debuggage
+      // if (SD.exists("data_test.txt")) {
+      //   Serial.println("data_test exists. ");
+      // }
+
+      // Vérification si le fichier a pu être ouvert
+      if (dataFile) {
+        // Écriture des données dans le fichier
+        //dataFile.println(dataString);
+        dataFile.print(value);
+
+        //-----------------------------------------------------------------
+        // Serial.print("data ecrite : "); // Affichage dans le Serial Monitor
+        // Serial.println(dataString);
+        Serial.print(value);
+        //-----------------------------------------------------------------
+
+        // Fermeture du fichier
+        dataFile.close();
+        
+        //Serial.println("Donnees ecrites avec succes !");
+      } 
+      else {
+        Serial.println("Erreur lors de l'ouverture du fichier.");
+        while(1);
+      }
   }
   
-  // Attente avant la prochaine écriture
-  delay(5000);
 }
