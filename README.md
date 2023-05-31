@@ -5,6 +5,7 @@ Arduino UNO
   - may25_SDcard   : 
     -  v1 : Ecrit des lignes "test k" sur la carte SD
     -  v2 : Ecrit des lignes "test de communication K" recues de Leonardo
+    -  v3 : Permet de continuer dès lors que la carte est inserée (changement du "if not begin" en while)
              
   - may31_SDcard_fonctions   :
     -  v1 : seulement init SD card en fonction
