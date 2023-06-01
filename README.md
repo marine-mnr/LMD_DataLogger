@@ -10,7 +10,7 @@ Arduino UNO
   - may31_SDcard_fonctions   :
     -  v1 : seulement init SD card en fonction
     -  v2 : initSDcar et save2SD en fonctions
-    -  v3 : init modifié avec while et begin status
+    -  v3 : init modifié avec while et begin status (possibilité d'ajouter la SD en cours de fonctionnement
     -  v4 : correction de bugs
             
 Arduino LEONARDO 
