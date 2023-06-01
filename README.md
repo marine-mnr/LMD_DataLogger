@@ -11,6 +11,7 @@ Arduino UNO
     -  v1 : seulement init SD card en fonction
     -  v2 : initSDcar et save2SD en fonctions
     -  v3 : init modifié avec while et begin status
+    -  v4 : correction de bugs
             
 Arduino LEONARDO 
   - may22_transmitter : envoie via le port serie des lignes "test de communication k"
