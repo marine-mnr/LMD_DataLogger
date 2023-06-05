@@ -12,6 +12,8 @@ Arduino UNO
     -  v2 : initSDcar et save2SD en fonctions
     -  v3 : init modifié avec while et begin status (possibilité d'ajouter la SD en cours de fonctionnement
     -  v4 : correction de bugs
+    -  v5 : (marche pas: essai d'enregistrement par ligne avec readStringUntil)
+    -  v6 : YES! enregistrement de trame TSEN ! (ligne par ligne)
             
 Arduino LEONARDO 
   - may22_transmitter : envoie via le port serie des lignes "test de communication k"
