@@ -14,6 +14,7 @@ Arduino UNO
     -  v4 : correction de bugs
     -  v5 : (marche pas: essai d'enregistrement par ligne avec readStringUntil)
     -  v6 : YES! enregistrement de trame TSEN ! (ligne par ligne)
+    -  v7 : v6 avec le buffer en version fonction
             
 Arduino LEONARDO 
   - may22_transmitter : envoie via le port serie des lignes "test de communication k"
