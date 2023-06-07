@@ -19,3 +19,8 @@ Arduino UNO
             
 Arduino LEONARDO 
   - may22_transmitter : envoie via le port serie des lignes "test de communication k"
+
+MKR 
+- MKR_v1_test_ecriture : Ecrit des lignes "test k" sur la carte SD
+- MKR_v2_receiver_copy : Lis des trames TSEN (autotrigger) et affiche sur Monitor
+- MKR_v3_recep_autotrig_save : Lis et écrit des trames TSEN (autotrigger) sur la carte SD
