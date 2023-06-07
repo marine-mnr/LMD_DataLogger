@@ -2,7 +2,8 @@ char value=0;
 
 void setup() {
   // start serial port at 9600 bps and wait for port to open:
-  Serial.begin(9600);
+  Serial.begin(19200); //monitor
+  Serial1.begin(9600); //uart
   //pinMode(LED_BUILTIN, OUTPUT);
   //Serial.print("je vous écoute...");
   //Serial.println(); //retour à la ligne
@@ -11,10 +12,11 @@ void setup() {
 //RECEPTEUR//
 void loop() {
   // si on recoit quelque chose :
-  if(Serial.available()>0){
+  if(Serial1.available()>0){
     //digitalWrite(LED_BUILTIN, HIGH);
-    value=Serial.read();
+    value=Serial1.read();
     Serial.print(value);
+
     if(value=='\r'){    //13=0x0D=\r=carriage return
       Serial.print('\n');
     }
