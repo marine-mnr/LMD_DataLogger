@@ -26,3 +26,5 @@ MKR
 - MKR_v3_recep_autotrig_save : Lis et écrit des trames TSEN (autotrigger) sur la carte SD
 - v4 : monitor et UART si differentes baudrates + while du while(!Serial)
 - v5 : verifie la validite de la trame
+- v6 : permet d'interroger TSEN (marche pas a tous les coup.. a cause du simulator ?)
+- .....v7 : fichiers dupliques
