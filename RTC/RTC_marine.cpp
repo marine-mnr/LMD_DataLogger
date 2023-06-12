@@ -2,21 +2,21 @@
 #include <RTC_marine.h>
 #include <RTCZero.h>
 
-/*attention il faut avoir fait "rtc.begin()" et "RTCZero rtc;" au préalable*/
+/*attention il faut avoir fait "rtc.begin()" et "RTCZero rtc;" au prï¿½alable*/
 
-void RTC_marine::RTC_marine()
+RTC_marine::RTC_marine()
 {
     rtc.begin();
 }
 
-/*Permet d'affecter la date et l'heure à une carte disposant d'une RTC */
-void RTC_Marine::setDateTime(const byte day, const byte month, const byte year, const byte hours, const byte minutes, const byte seconds){
+/*Permet d'affecter la date et l'heure ï¿½ une carte disposant d'une RTC */
+void RTC_marine::setDateTime(const byte day, const byte month, const byte year, const byte hours, const byte minutes, const byte seconds){
   rtc.setDate(day, month, year);
   rtc.setTime(hours, minutes, seconds);
 }
 
-/*Renvoie un timestamp, tableau de caractères contenant la date et l'heure actuelle*/
-char* RTC_Marine::get_timestamp(){
+/*Renvoie un timestamp, tableau de caractï¿½res contenant la date et l'heure actuelle*/
+char* RTC_marine::get_timestamp(){
   // Get the current date and time from the RTC
   int day = rtc.getDay();
   int month = rtc.getMonth();
