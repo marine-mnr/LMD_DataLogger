@@ -27,4 +27,18 @@ MKR
 - v4 : monitor et UART si differentes baudrates + while du while(!Serial)
 - v5 : verifie la validite de la trame
 - v6 : permet d'interroger TSEN (marche pas a tous les coup.. a cause du simulator ?)
-- .....v7 : fichiers dupliques
+- v7 : fichiers dupliques
+- v8 : ajout timestamp + possibilité de réinserer SD sans rester bloqué dans "erreur ouverture fichier"
+
+
+RTC : 
+- SimpleRTC_Marine : a partir de l'exemple, serRTC et get_timestamp dans meme programme
+- Get_timestamp : get_timestamp uniquement, pour pas reset le temps a chaque fois
+- RTC_test_my_library : permet de tester l'ajout de ma propre librairie (marche pas)
+- ma librairie : 
+  - RTC_marine.cpp
+  - RTC_marine.h
+
+
+Simulateur Python:
+Utiliser le plus recent : Simule_TSEN_RACHUTS_RX_REALLY_NEED_TRIGGER_readquery_charbychar.py
