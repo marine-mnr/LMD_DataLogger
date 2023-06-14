@@ -29,6 +29,7 @@ MKR
 - v6 : permet d'interroger TSEN (marche pas a tous les coup.. a cause du simulator ?)
 - v7 : fichiers dupliques
 - v8 : ajout timestamp + possibilité de réinserer SD sans rester bloqué dans "erreur ouverture fichier"
+- v9 : utilise la librairie RTC_marine
 
 
 RTC : 
